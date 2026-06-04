@@ -17,10 +17,26 @@ PRESET_QUALITY = {
 
 
 def file_size(path: Path) -> int:
+    """
+    Docstring for file_size
+    
+    :param path: Description
+    :type path: Path
+    :return: Description
+    :rtype: int
+    """
     return path.stat().st_size
 
 
 def format_size(size: int) -> str:
+    """
+    Docstring for format_size
+    
+    :param size: Description
+    :type size: int
+    :return: Description
+    :rtype: str
+    """
     for unit in ("B", "KB", "MB", "GB"):
         if size < 1024 or unit == "GB":
             return f"{size:.1f} {unit}" if unit != "B" else f"{size} {unit}"
@@ -29,6 +45,12 @@ def format_size(size: int) -> str:
 
 
 def parse_args() -> argparse.Namespace:
+    """
+    Docstring for parse_args
+    
+    :return: Description
+    :rtype: Namespace
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_pdf", type=Path)
     parser.add_argument("output_pdf", type=Path)
@@ -52,6 +74,12 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """
+    Docstring for main
+    
+    :return: Description
+    :rtype: int
+    """
     args = parse_args()
     input_pdf = args.input_pdf
     output_pdf = args.output_pdf

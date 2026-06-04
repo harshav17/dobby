@@ -10,6 +10,16 @@ import fitz
 
 
 def parse_page_spec(spec: str | None, page_count: int) -> list[int]:
+    """
+    Docstring for parse_page_spec
+    
+    :param spec: Description
+    :type spec: str | None
+    :param page_count: Description
+    :type page_count: int
+    :return: Description
+    :rtype: list[int]
+    """
     if spec is None:
         return list(range(1, page_count + 1))
 
@@ -43,6 +53,12 @@ def parse_page_spec(spec: str | None, page_count: int) -> list[int]:
 
 
 def parse_args() -> argparse.Namespace:
+    """
+    Docstring for parse_args
+    
+    :return: Description
+    :rtype: Namespace
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_pdf", type=Path)
     parser.add_argument("output_dir", type=Path)

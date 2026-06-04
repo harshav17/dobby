@@ -10,6 +10,14 @@ from pypdf import PdfReader, PdfWriter
 
 
 def parse_page_spec(spec: str) -> list[int]:
+    """
+    Docstring for parse_page_spec
+    
+    :param spec: Description
+    :type spec: str
+    :return: Description
+    :rtype: list[int]
+    """
     pages: list[int] = []
     for part in spec.split(","):
         part = part.strip()
@@ -30,6 +38,12 @@ def parse_page_spec(spec: str) -> list[int]:
 
 
 def parse_args() -> argparse.Namespace:
+    """
+    Docstring for parse_args
+    
+    :return: Description
+    :rtype: Namespace
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("input_pdf", type=Path)
     parser.add_argument("output_pdf", type=Path)
@@ -47,6 +61,12 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    """
+    Docstring for main
+    
+    :return: Description
+    :rtype: int
+    """
     args = parse_args()
     input_pdf = args.input_pdf
     output_pdf = args.output_pdf

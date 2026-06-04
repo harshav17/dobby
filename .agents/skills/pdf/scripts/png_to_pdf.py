@@ -16,6 +16,12 @@ SUPPORTED_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 
 
 def parse_args() -> argparse.Namespace:
+    """
+    Docstring for parse_args
+    
+    :return: Description
+    :rtype: Namespace
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("images", nargs="+", type=Path, help="Input PNG/JPEG files in page order.")
     parser.add_argument("-o", "--output", required=True, type=Path, help="Output PDF path.")
@@ -28,6 +34,16 @@ def parse_args() -> argparse.Namespace:
 
 
 def normalized_image_paths(images: list[Path], temp_dir: Path) -> list[Path]:
+    """
+    Docstring for normalized_image_paths
+    
+    :param images: Description
+    :type images: list[Path]
+    :param temp_dir: Description
+    :type temp_dir: Path
+    :return: Description
+    :rtype: list[Path]
+    """
     paths: list[Path] = []
     for image_path in images:
         if not image_path.is_file():
@@ -51,6 +67,12 @@ def normalized_image_paths(images: list[Path], temp_dir: Path) -> list[Path]:
 
 
 def main() -> int:
+    """
+    Docstring for main
+    
+    :return: Description
+    :rtype: int
+    """
     args = parse_args()
     output_pdf = args.output
 
